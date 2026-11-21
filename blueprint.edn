@@ -1,0 +1,18 @@
+{:itonami.blueprint/id "cloud-itonami-isic-6310"
+ :itonami.blueprint/name "Governed HR and Talent-Management Actor"
+ :itonami.blueprint/isic-rev5 "6310"
+ :itonami.blueprint/domain :hr/talent-management
+ :itonami.blueprint/license "AGPL-3.0-or-later"
+ :itonami.blueprint/social-impact [:fair-evaluation :people-data-sovereignty :minimal-disclosure]
+ :itonami.blueprint/governor :policy-governor
+ :itonami.blueprint/robotics false
+ :itonami.blueprint/required-technologies [:identity :audit-ledger]
+ :itonami.blueprint/status :public-oss
+ :itonami.blueprint/implemented-slice
+ "HR-LLM sealed advisor wrapped by an independent PolicyGovernor
+ (src/talent/policy.cljk: rbac, purpose-limitation, fairness and
+ minimal-disclosure checks; high-stakes changes escalate to a human),
+ a langgraph-clj StateGraph and an append-only audit ledger. The
+ repository also holds an AI data-center business lane
+ (src/ai_datacenter/, docs/adr/0003-ai-datacenter-business-lane.md)
+ and its own static web demo (web/) and wasm/ module."}
